@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas IBGE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho-imagem" src="recenseador-menina.png" alt="IBGE">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item" href="../index.html" >Home</a> 
+            <a class="cabecalho-menu-item" href="../login/index.html">Login</a>
+            <a class="cabecalho-menu-item" href="index.html" >Consultar</a>
+        </nav>
+    </header>
+    
+    <main class="conteudo">
+        <section class="conteudo-principal">
+            <div class="conteudo-principal-escrito">
+                <h1 class="conteudo-principal-titulo">Consultas!</h1>
+                <h2 class="conteudo-principal-subtitulo">Utilize os filtros para buscar os dados!</h2>
+                <form class="escolha-dos-dados" id="escolha-do-filtro">
+                    <select class="lista1" id="escolha-da-lista">
+                        <option value="estimativa" >Estimativa da população</option>
+                        <option value="desemprego">Desemprego</option>
+                        <option value="escolarizacao">Escolarização</option>
+                        <option value="analfabetismo">Analfabetismo</option>
+                        <option value="fecundidade">Fecundidade</option>
+                        <option value="mortalidade">Mortalidade Infantil</option>
+                    </select>
+                    <button type="button" class="conteudo-principal-escrito-botao" onclick="myFunction()">CONSULTAR</button>
+                </form>
+            </div>
+            
+        </section>
+
+        <section class="conteudo-secundario">
+            <div id="chartContainer" style="height: 400px; width: 900px; padding-top: 70px;"></div>
+        </section>
+
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script>
+        function myFunction(){
+            var escolha = document.getElementById("escolha-da-lista").value;
+            console.log(escolha);
+
+            if (escolha === "estimativa"){
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+	        theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Estimativa da população"
+            },
+            axisY: {
+                title: "Quantidade de pessoas"
+            },
+            data: [{        
+                type: "column",  
+                showInLegend: true,
+                color: "green", 
+                legendMarkerColor: "grey",
+                dataPoints: [      
+                    { y: 191480630, label: "2009" },
+                    { y: 192379287, label: "2011" },
+                    { y: 193904015, label: "2012" },
+                    { y: 201032714, label: "2013" },
+                    { y: 202768562, label: "2014" },
+                    { y: 204450049, label: "2015" },
+                    { y: 206081432, label: "2016" },
+                    { y: 207660929, label: "2017" },
+                    { y: 208494900, label: "2018" },
+                    { y: 210147125, label: "2019" },
+                    { y: 211755692, label: "2020" },
+                    { y: 213317639, label: "2021" },
+                ]
+            }]
+        });
+        chart.render();
+               
+        }
+        
+            else if (escolha === "desemprego"){
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Desemprego"
+            },
+            axisY: {
+                title: "Porcentagem"
+            },
+            data: [{        
+                type: "column",  
+                showInLegend: true,
+                color: "red", 
+                legendMarkerColor: "grey",
+                dataPoints: [      
+                    { y: 11.1, label: "4º tri 2019" },
+                    { y: 12.4, label: "1º tri 2020" },
+                    { y: 13.6, label: "2º tri 2020" },
+                    { y: 14.9, label: "3º tri 2020" },
+                    { y: 14.2, label: "4º tri 2020" },
+                    { y: 14.9, label: "1º tri 2021" },
+                    { y: 14.2, label: "2º tri 2021" },
+                    { y: 12.6, label: "3º tri 2021" },
+                    { y: 11.1, label: "4º tri 2021" },
+                    { y: 11.1, label: "1º tri 2022" },
+                    { y: 9.3, label: "2º tri 2022" },
+                    { y: 8.7, label: "3º tri 2022" },
+                ]
+            }]
+            });
+        chart.render();
+        }
+
+            else if (escolha === "escolarizacao"){
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Escolarização"
+            },
+            axisY: {
+                title: "Pessoas que frequentam a escola(porcentagem)"
+            },
+            data: [{        
+                type: "column",  
+                showInLegend: true,
+                color: "blue",
+                legendMarkerColor: "grey",
+                dataPoints: [      
+                    { y: 99.2, label: "2016" },
+                    { y: 99.2, label: "2017" },
+                    { y: 99.3, label: "2018" },
+                    { y: 99.7, label: "2019" },
+                ]
+            }]
+            });
+            chart.render();
+}
+            else if (escolha === "analfabetismo"){
+
+                var chart = new CanvasJS.Chart("chartContainer", {
+	            animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Analfabetismo"
+                },
+                axisY: {
+                title: "Pessoas analfabetas (porcentagem)"
+                },
+                data: [{        
+                    type: "line",
+                    indexLabelFontSize: 16,
+                    color : "red",
+                    dataPoints: [
+                        { y: 7.2, label:"2016", indexLabel: "\u2191 Maior Pico",markerColor: "red", markerType: "triangle" },
+                        { y: 6.9, label:"2017"},
+                        { y: 6.8, label:"2018"},
+                        { y: 6.6, label:"2019", indexLabel: "\u2191 Menor Pico",markerColor: "red", markerType: "triangle" },
+                        ]
+                    }]
+                });
+                chart.render();
+                }
+
+            else if (escolha === "fecundidade"){
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+	            animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Fecundidade"
+                },
+                axisY: {
+                title: "Filhos por mulher"
+                },
+                data: [{        
+                    type: "line",
+                    indexLabelFontSize: 16,
+                    color : "green",
+                    dataPoints: [
+                        { y: 2.04, label:"2006", indexLabel: "\u2191 Maior Pico",markerColor: "green", markerType: "circle" },
+                        { y: 1.99, label:"2007"},
+                        { y: 1.95, label:"2008"},
+                        { y: 1.91, label:"2009"},
+                        { y: 1.75, label:"2010"},
+                        { y: 1.76, label:"2011"},
+                        { y: 1.75, label:"2012"},
+                        { y: 1.74, label:"2013"},
+                        { y: 1.78, label:"2014"},
+                        { y: 1.80, label:"2015"},
+                        { y: 1.70, label:"2016", indexLabel: "\u2191 Menor Pico",markerColor: "green", markerType: "circle" },
+                        { y: 1.78, label:"2017"},
+                        { y: 1.77, label:"2018"},
+                        { y: 1.77, label:"2019"},
+                        { y: 1.76, label:"2020"},
+                        { y: 1.76, label:"2021"},
+                        ]
+                    }]
+                });
+                chart.render();
+                }
+
+            else {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+	        animationEnabled: true,
+            theme: "light2",
+            title:{
+                text: "Mortalidade infantil"
+            },
+            axisY: {
+                title: "Óbitos a cada mil nascidos vivos"
+            },
+            data: [{        
+                type: "line",
+                indexLabelFontSize: 16,
+                color : "green",
+                dataPoints: [
+                    { y: 21, label:"2006", indexLabel: "\u2191 Maior Pico",markerColor: "green", markerType: "circle" },
+                    { y: 20, label:"2007"},
+                    { y: 19, label:"2008"},
+                    { y: 18.10, label:"2009"},
+                    { y: 17.20, label:"2010"},
+                    { y: 16.40, label:"2011"},
+                    { y: 15.70, label:"2012"},
+                    { y: 15, label:"2013"},
+                    { y: 14.40, label:"2014"},
+                    { y: 13.80, label:"2015"},
+                    { y: 13.30, label:"2016"},
+                    { y: 12.80, label:"2017"},
+                    { y: 12.35, label:"2018"},
+                    { y: 11.94, label:"2019"},
+                    { y: 11.56, label:"2020"},
+                    { y: 11.20, label:"2021", indexLabel: "\u2191 Menor Pico",markerColor: "green", markerType: "circle" },
+                    ]
+                    }]
+                });
+                chart.render();
+                }
+        };
+
+        
+    </script>    
+
+    </main>
+
+    <footer class="rodape">
+        <img class="rodape-imagem" src="IBGE.png">
+    </footer>
+</body>
+
+</html>
+

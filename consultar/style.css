@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sarala&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,70,87,1) 24%, rgba(0,212,255,1) 100%); #008373 0, #00716a 12.5%, #005d5b 25%, #004548 37.5%, #012c30 50%, #001518 62.5%, #000000 75%, #000000 87.5%, #000000 100%);
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
+}
+
+.cabecalho-imagem {
+    max-width:130px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+}
+
+.rodape-imagem{
+    max-width:180px;
+    max-height:140px;
+    width: auto;
+    height: auto;   
+}
+
+.cabecalho-menu{
+    display:flex;
+    gap: 120px;
+}
+
+.cabecalho-menu-item{
+    font-family: 'Sarala', sans-serif;
+    color: #fff2e7;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.conteudo {
+    margin-bottom: 48px;
+    border-top:0.4px solid #fff2e7;
+    padding-bottom: 120px;
+}
+
+.conteudo-principal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.conteudo-principal-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    color: #fff2e7;
+    text-align: center;
+}
+
+.conteudo-principal-subtitulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 20px;
+    color: #fff2e7;
+}
+
+.conteudo-secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+
+.conteudo-secundario-titulo {
+    padding-top: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff2e7;
+}
+
+.conteudo-secundario-paragrafo{
+    font-family: 'Sarala', sans-serif;
+    color: #fff2e7;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.rodape {
+    padding:32px;
+    border-top: 0.4px solid #fff2e7;
+}
+
+.rodape-imagem {
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
+.dados-escrita {
+    padding-top: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff2e7;
+}
+
+.dados-escrita2 {
+    padding-top: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff2e7;
+}
+
+.conteudo-principal-escrito-botao{
+    margin-left: 140px;
+}
+
+
+/* CSS */
+.conteudo-principal-escrito-botao {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.15385;
+  width: 200px;
+  height: 40px;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.conteudo-principal-escrito-botao:hover,
+.conteudo-principal-escrito-botao:focus {
+  background-color: #07c;
+}
+
+.conteudo-principal-escrito-botao:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.conteudo-principal-escrito-botao:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+.lista1 {
+      background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-left: 40px;
+  align-items: center;
+}
+
